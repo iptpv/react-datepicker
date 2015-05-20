@@ -118,6 +118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          hideCalendar: this.hideCalendar,
 	          minDate: this.props.minDate,
 	          maxDate: this.props.maxDate,
+	          locale: this.props.locale,
 	          weekStart: this.props.weekStart })
 	      );
 	    }

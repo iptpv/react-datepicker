@@ -48,6 +48,7 @@ var exampleComponent = React.createClass({
   render: function() {
     return <div>
       <DatePicker
+        locale="ru"
         key="example1"
         selected={this.state.start_date}
         onChange={this.handleStartDateChange}
