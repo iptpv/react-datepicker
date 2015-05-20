@@ -18,7 +18,8 @@ var Calendar = React.createClass({
 
   getDefaultProps: function() {
     return {
-      weekStart: 1
+      weekStart: 1,
+      locale: 'en'
     };
   },
 
@@ -38,14 +39,17 @@ var Calendar = React.createClass({
   },
 
   initializeMomentLocale: function() {
-    var weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+    moment.locale(this.props.locale);
+    var weekdays = moment.weekdaysMin();
+    var months = moment.months();
     weekdays = weekdays.concat(weekdays.splice(0, this.props.weekStart));
 
     moment.locale('en', {
       week: {
         dow: this.props.weekStart
       },
-      weekdaysMin : weekdays
+      weekdaysMin: weekdays,
+      months: months
     });
   },
 
